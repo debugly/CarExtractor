@@ -10,6 +10,9 @@
 		DDCE80EE235EB57C006F68FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCE80ED235EB57C006F68FC /* AppDelegate.swift */; };
 		DDCE80F0235EB57D006F68FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDCE80EF235EB57D006F68FC /* Assets.xcassets */; };
 		DDCE80F3235EB57D006F68FC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDCE80F1235EB57D006F68FC /* MainMenu.xib */; };
+		DDCE80FC235ECE79006F68FC /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCE80FB235ECE79006F68FC /* RootViewController.swift */; };
+		DDCE8138235ED487006F68FC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCE8137235ED487006F68FC /* main.m */; };
+		DDCE8177235EDF23006F68FC /* DragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCE8176235EDF23006F68FC /* DragView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,10 @@
 		DDCE80F2235EB57D006F68FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		DDCE80F4235EB57D006F68FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDCE80F5235EB57D006F68FC /* CarToolApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CarToolApp.entitlements; sourceTree = "<group>"; };
+		DDCE80FB235ECE79006F68FC /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		DDCE8137235ED487006F68FC /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DDCE813B235ED56A006F68FC /* BridgeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgeHeader.h; sourceTree = "<group>"; };
+		DDCE8176235EDF23006F68FC /* DragView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +59,10 @@
 			isa = PBXGroup;
 			children = (
 				DDCE80ED235EB57C006F68FC /* AppDelegate.swift */,
+				DDCE80FB235ECE79006F68FC /* RootViewController.swift */,
+				DDCE8176235EDF23006F68FC /* DragView.swift */,
+				DDCE8137235ED487006F68FC /* main.m */,
+				DDCE813B235ED56A006F68FC /* BridgeHeader.h */,
 				DDCE80EF235EB57D006F68FC /* Assets.xcassets */,
 				DDCE80F1235EB57D006F68FC /* MainMenu.xib */,
 				DDCE80F4235EB57D006F68FC /* Info.plist */,
@@ -130,6 +141,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDCE80FC235ECE79006F68FC /* RootViewController.swift in Sources */,
+				DDCE8138235ED487006F68FC /* main.m in Sources */,
+				DDCE8177235EDF23006F68FC /* DragView.swift in Sources */,
 				DDCE80EE235EB57C006F68FC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,7 +212,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -252,7 +266,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -268,13 +282,24 @@
 				CODE_SIGN_ENTITLEMENTS = CarToolApp/CarToolApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CarToolApp",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
 				INFOPLIST_FILE = CarToolApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
+				OTHER_LDFLAGS = (
+					"-framework",
+					CoreUI,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = debugly.cn.CarToolApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/CarToolApp/BridgeHeader.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -286,13 +311,24 @@
 				CODE_SIGN_ENTITLEMENTS = CarToolApp/CarToolApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CarToolApp",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
 				INFOPLIST_FILE = CarToolApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
+				OTHER_LDFLAGS = (
+					"-framework",
+					CoreUI,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = debugly.cn.CarToolApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/CarToolApp/BridgeHeader.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
