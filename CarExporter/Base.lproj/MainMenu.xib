@@ -13,7 +13,7 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="CarToolApp" customModuleProvider="target">
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="CarExporter" customModuleProvider="target">
             <connections>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
@@ -21,11 +21,11 @@
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
             <items>
-                <menuItem title="CarToolApp" id="1Xt-HY-uBw">
+                <menuItem title="CarExporter" id="1Xt-HY-uBw">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="CarToolApp" systemMenu="apple" id="uQy-DD-JDr">
+                    <menu key="submenu" title="CarExporter" systemMenu="apple" id="uQy-DD-JDr">
                         <items>
-                            <menuItem title="About CarToolApp" id="5kV-Vb-QxS">
+                            <menuItem title="About CarExporter" id="5kV-Vb-QxS">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="orderFrontStandardAboutPanel:" target="-1" id="Exp-CZ-Vem"/>
@@ -39,7 +39,7 @@
                                 <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
-                            <menuItem title="Hide CarToolApp" keyEquivalent="h" id="Olw-nP-bQN">
+                            <menuItem title="Hide CarExporter" keyEquivalent="h" id="Olw-nP-bQN">
                                 <connections>
                                     <action selector="hide:" target="-1" id="PnN-Uc-m68"/>
                                 </connections>
@@ -57,7 +57,7 @@
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                            <menuItem title="Quit CarToolApp" keyEquivalent="q" id="4sb-4s-VLi">
+                            <menuItem title="Quit CarExporter" keyEquivalent="q" id="4sb-4s-VLi">
                                 <connections>
                                     <action selector="terminate:" target="-1" id="Te7-pn-YzF"/>
                                 </connections>
@@ -670,7 +670,7 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
                         <items>
-                            <menuItem title="CarToolApp Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                            <menuItem title="CarExporter Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                 <connections>
                                     <action selector="showHelp:" target="-1" id="y7X-2Q-9no"/>
                                 </connections>
@@ -681,7 +681,7 @@
             </items>
             <point key="canvasLocation" x="140" y="154"/>
         </menu>
-        <window title="CarToolApp" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
+        <window title="CarExporter" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="300" height="200"/>
@@ -698,7 +698,15 @@
                         </constraints>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" image="AddImage" id="wbs-7f-yor"/>
                     </imageView>
-                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="wro-AP-HLC" customClass="DragView" customModule="CarToolApp" customModuleProvider="target">
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4NN-i3-oa3">
+                        <rect key="frame" x="95" y="60" width="111" height="16"/>
+                        <textFieldCell key="cell" lineBreakMode="clipping" title="将文件拖拽到这里" id="mzC-CN-WAB">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="tertiaryLabelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="wro-AP-HLC" customClass="DragView" customModule="CarExporter" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
                         <subviews>
                             <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IYx-9A-7DW">
@@ -727,6 +735,8 @@
                     <constraint firstAttribute="bottom" secondItem="wro-AP-HLC" secondAttribute="bottom" id="XdB-lN-Uke"/>
                     <constraint firstItem="wro-AP-HLC" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="YFd-Ms-eq1"/>
                     <constraint firstItem="thN-fN-8RA" firstAttribute="centerY" secondItem="EiT-Mj-1SZ" secondAttribute="centerY" id="e7g-C6-CPP"/>
+                    <constraint firstItem="4NN-i3-oa3" firstAttribute="top" secondItem="thN-fN-8RA" secondAttribute="bottom" id="eqQ-w2-NBj"/>
+                    <constraint firstItem="4NN-i3-oa3" firstAttribute="centerX" secondItem="EiT-Mj-1SZ" secondAttribute="centerX" id="ouc-rk-2ZL"/>
                 </constraints>
             </view>
             <toolbar key="toolbar" implicitIdentifier="9F5A45A6-3EF3-437F-8AF9-1A5CAF33BA70" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="dew-53-jO2">
@@ -762,7 +772,7 @@
             </toolbar>
             <point key="canvasLocation" x="54" y="-121"/>
         </window>
-        <viewController id="hyQ-Lq-9LV" customClass="RootViewController" customModule="CarToolApp" customModuleProvider="target">
+        <viewController id="hyQ-Lq-9LV" customClass="RootViewController" customModule="CarExporter" customModuleProvider="target">
             <connections>
                 <outlet property="dragView" destination="wro-AP-HLC" id="WoW-6p-tCH"/>
                 <outlet property="tripLabel" destination="IYx-9A-7DW" id="pBB-fv-LEH"/>
