@@ -729,6 +729,8 @@
                     </customView>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="4NN-i3-oa3" secondAttribute="bottom" constant="60" id="2ZK-N0-iyd"/>
+                    <constraint firstItem="thN-fN-8RA" firstAttribute="top" relation="greaterThanOrEqual" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="76" id="Amh-l5-gDF"/>
                     <constraint firstAttribute="trailing" secondItem="wro-AP-HLC" secondAttribute="trailing" id="F5x-9z-C4n"/>
                     <constraint firstItem="thN-fN-8RA" firstAttribute="centerX" secondItem="EiT-Mj-1SZ" secondAttribute="centerX" id="RBk-q5-vBp"/>
                     <constraint firstItem="wro-AP-HLC" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="XCg-as-qJV"/>

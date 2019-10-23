@@ -32,11 +32,11 @@ class RootViewController: NSViewController,DragViewDelegate {
         dragView.delegate = self
     }
     
-    fileprivate func generateDir() -> String{
+    fileprivate func generateDir(_ d: String = "") -> String{
         let formatter = DateFormatter();
         formatter.dateFormat = "YYYY-MM-dd HH-MM-SS"
         let dateStr = formatter.string(from: Date())
-        let dir = outDir.appendingFormat("%@", dateStr)
+        let dir = outDir.appendingFormat("%@/%@", dateStr,d)
         do {
             try FileManager.default.createDirectory(atPath: dir, withIntermediateDirectories: true, attributes: nil)
         } catch {
@@ -45,19 +45,15 @@ class RootViewController: NSViewController,DragViewDelegate {
         return dir
     }
     
-    fileprivate func exportCarFile(_ carPath: String?) {
+    fileprivate func exportCarFile(_ carPath: String, _ d: String) {
         
         tripLabel.isHidden = true;
         
-        if carPath != nil {
-            
-            let dir = generateDir()
-            currentDir = dir
-            let sum = exportCarFileAtPath(carPath, dir)
-            if sum > 0 {
-                tripLabel.isHidden = false;
-                tripLabel.stringValue = "成功提取\(sum)张图片，快去Finder查看吧";
-            }
+        let dir = generateDir(d)
+        currentDir = dir
+        let sum = exportCarFileAtPath(carPath, dir)
+        if sum > 0 {
+            showInfo("成功提取\(sum)张图片，快去Finder查看吧")
         }
     }
     
@@ -77,14 +73,26 @@ class RootViewController: NSViewController,DragViewDelegate {
         if openPanel.runModal() == NSApplication.ModalResponse.OK {
             let url = openPanel.url;
             if url != nil {
-                let carPath = url?.path
-                exportCarFile(carPath)
+                guard let carPath = url?.path else { return }
+                exportCarFile(carPath, "")
             }
         }
     }
     
+    fileprivate func showError(_ err: String) {
+        tripLabel.isHidden = false;
+        tripLabel.stringValue = err;
+        tripLabel.textColor = NSColor(red: 246.0/255.0, green: 44.0/255.0, blue: 57.0/255.0, alpha: 1);
+    }
+    
+    fileprivate func showInfo(_ msg: String) {
+        tripLabel.isHidden = false;
+        tripLabel.stringValue = msg;
+        tripLabel.textColor = NSColor(red: 39.0/255.0, green: 161.0/255.0, blue: 82.0/255.0, alpha: 1);
+    }
+    
     @IBAction func aboutMe(_ sender: NSToolbarItem) {
-        let url:URL = URL(string:"http://debugly.cn/apps")!;
+        let url:URL = URL(string:"http://debugly.cn/apps/CarExporter/")!;
         NSWorkspace.shared.open(url)
     }
     
@@ -98,7 +106,11 @@ class RootViewController: NSViewController,DragViewDelegate {
         NSWorkspace.shared.open(url)
     }
     
-    func didDragFile(_ path: String) {
-        exportCarFile(path)
+    func didDragFile(_ path: String, _ dir: String) {
+        exportCarFile(path, dir)
+    }
+    
+    func didDragNotCarFile(_ err: String) {
+        showError(err)
     }
 }
