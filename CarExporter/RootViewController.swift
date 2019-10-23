@@ -34,7 +34,7 @@ class RootViewController: NSViewController,DragViewDelegate {
     
     fileprivate func generateDir(_ d: String = "") -> String{
         let formatter = DateFormatter();
-        formatter.dateFormat = "YYYY-MM-dd HH-MM-SS"
+        formatter.dateFormat = "YYYY-MM-dd HH-mm-ss"
         let dateStr = formatter.string(from: Date())
         let dir = outDir.appendingFormat("%@/%@", dateStr,d)
         do {
