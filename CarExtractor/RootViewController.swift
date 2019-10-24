@@ -15,7 +15,7 @@ class RootViewController: NSViewController,DragViewDelegate {
     @IBOutlet weak var tripLabel: NSTextField!
     lazy var outDir = { () -> String in
         var dir  = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.desktopDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first!
-        dir = dir.appending("/CarTool/")
+        dir = dir.appending("/CarExporter/")
         do {
             try FileManager.default.createDirectory(atPath: dir, withIntermediateDirectories: true, attributes: nil)
         } catch {
