@@ -16,7 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DDCE80EA235EB57C006F68FC /* CarExporter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarExporter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDCE80EA235EB57C006F68FC /* CarExtractor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarExtractor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDCE80ED235EB57C006F68FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDCE80EF235EB57D006F68FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDCE80F2235EB57D006F68FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -49,7 +49,7 @@
 		DDCE80EB235EB57C006F68FC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DDCE80EA235EB57C006F68FC /* CarExporter.app */,
+				DDCE80EA235EB57C006F68FC /* CarExtractor.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -66,15 +66,16 @@
 				DDCE80F1235EB57D006F68FC /* MainMenu.xib */,
 				DDCE80F4235EB57D006F68FC /* Info.plist */,
 			);
-			path = CarExporter;
+			name = CarExporter;
+			path = CarExtractor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DDCE80E9235EB57C006F68FC /* CarExporter */ = {
+		DDCE80E9235EB57C006F68FC /* CarExtractor */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DDCE80F8235EB57D006F68FC /* Build configuration list for PBXNativeTarget "CarExporter" */;
+			buildConfigurationList = DDCE80F8235EB57D006F68FC /* Build configuration list for PBXNativeTarget "CarExtractor" */;
 			buildPhases = (
 				DDCE80E6235EB57C006F68FC /* Sources */,
 				DDCE80E7235EB57C006F68FC /* Frameworks */,
@@ -84,9 +85,9 @@
 			);
 			dependencies = (
 			);
-			name = CarExporter;
+			name = CarExtractor;
 			productName = CarToolApp;
-			productReference = DDCE80EA235EB57C006F68FC /* CarExporter.app */;
+			productReference = DDCE80EA235EB57C006F68FC /* CarExtractor.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -104,7 +105,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DDCE80E5235EB57C006F68FC /* Build configuration list for PBXProject "CarExporter" */;
+			buildConfigurationList = DDCE80E5235EB57C006F68FC /* Build configuration list for PBXProject "CarExtractor" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -117,7 +118,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DDCE80E9235EB57C006F68FC /* CarExporter */,
+				DDCE80E9235EB57C006F68FC /* CarExtractor */,
 			);
 		};
 /* End PBXProject section */
@@ -277,15 +278,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = CarExporter/CarExporter.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/CarExporter",
+					"$(PROJECT_DIR)/$(TARGET_NAME)",
 					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
 				);
-				INFOPLIST_FILE = CarExporter/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/$(TARGET_NAME)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -295,9 +295,9 @@
 					"-framework",
 					CoreUI,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = cn.debugly.CarExporter;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.debugly.CarExtractor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/CarExporter/BridgeHeader.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/$(TARGET_NAME)/BridgeHeader.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -306,15 +306,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = CarExporter/CarExporter.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/CarExporter",
+					"$(PROJECT_DIR)/$(TARGET_NAME)",
 					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
 				);
-				INFOPLIST_FILE = CarExporter/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/$(TARGET_NAME)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -324,9 +323,9 @@
 					"-framework",
 					CoreUI,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = cn.debugly.CarExporter;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.debugly.CarExtractor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/CarExporter/BridgeHeader.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/$(TARGET_NAME)/BridgeHeader.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -334,7 +333,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DDCE80E5235EB57C006F68FC /* Build configuration list for PBXProject "CarExporter" */ = {
+		DDCE80E5235EB57C006F68FC /* Build configuration list for PBXProject "CarExtractor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DDCE80F6235EB57D006F68FC /* Debug */,
@@ -343,7 +342,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DDCE80F8235EB57D006F68FC /* Build configuration list for PBXNativeTarget "CarExporter" */ = {
+		DDCE80F8235EB57D006F68FC /* Build configuration list for PBXNativeTarget "CarExtractor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DDCE80F9235EB57D006F68FC /* Debug */,
