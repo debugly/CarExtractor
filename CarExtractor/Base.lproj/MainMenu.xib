@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15400" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15400"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,7 +13,7 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="CarExporter" customModuleProvider="target">
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="CarExtractor" customModuleProvider="target">
             <connections>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
@@ -680,7 +681,7 @@
             </items>
             <point key="canvasLocation" x="140" y="154"/>
         </menu>
-        <window title="CarExtractor" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
+        <window title="CarExtractor" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="300" height="200"/>
@@ -705,7 +706,7 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="wro-AP-HLC" customClass="DragView" customModule="CarExporter" customModuleProvider="target">
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="wro-AP-HLC" customClass="DragView" customModule="CarExtractor" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
                         <subviews>
                             <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IYx-9A-7DW">
@@ -773,7 +774,7 @@
             </toolbar>
             <point key="canvasLocation" x="54" y="-121"/>
         </window>
-        <viewController id="hyQ-Lq-9LV" customClass="RootViewController" customModule="CarExporter" customModuleProvider="target">
+        <viewController id="hyQ-Lq-9LV" customClass="RootViewController" customModule="CarExtractor" customModuleProvider="target">
             <connections>
                 <outlet property="dragView" destination="wro-AP-HLC" id="WoW-6p-tCH"/>
                 <outlet property="tripLabel" destination="IYx-9A-7DW" id="pBB-fv-LEH"/>
